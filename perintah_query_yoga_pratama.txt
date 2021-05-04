@@ -1,0 +1,63 @@
+--1. Sudah diimport
+
+
+--2.Jawaban No. 2
+SELECT * FROM districts;
+
+SELECT * FROM provinces;
+
+SELECT * FROM regencies;
+
+SELECT * FROM villages;
+
+
+--3.Jawaban No. 3
+ALTER TABLE provinces
+RENAME TO provinsi;
+
+
+--4.Jawaban No. 4
+ALTER TABLE regencies
+RENAME TO kabupaten_kota;
+
+
+--5.Jawaban No. 5
+ALTER TABLE districts
+RENAME TO kecamatan;
+
+
+--6.Jawaban No. 6
+ALTER TABLE villages
+RENAME TO desa;
+
+
+--7.Jawaban No. 7
+SELECT A.district_id AS id_desa
+       , A.name AS desa
+       , B.name AS provinsi
+FROM desa A
+     ,provinsi B
+WHERE A.name = B.name
+AND A.district_id = '1101010'
+
+
+--8.Jawaban No. 8
+SELECT A.regency_id AS id_kabupaten_kota
+       , A.name AS kabupaten_kota
+       , B.name AS provinsi
+FROM kecamatan A ,provinsi B
+WHERE A.name = B.name
+AND A.regency_id = '1101010'
+
+
+--9.Jawaban No. 9
+SELECT A.id AS id_kabupaten_kota
+       , A.name AS kabupaten_kota
+       , B.name AS provinsi
+FROM kabupaten_kota A
+     ,provinsi B
+WHERE A.name = B.name
+AND A.id = '1101'
+
+
+10. Sudah saya export dengan nama yoga_pratama.sql
